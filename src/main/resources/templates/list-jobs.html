@@ -11,36 +11,35 @@
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
     <!-- TODO #1 - Use a loop to display job results in a table. -->
-    <table class="job-listing">
-        <th:block>
+    <th:block>
+    <table th:each="item : ${jobs}" class="job-listing">
+
             <tr>
-                <th>Keys</th>
-                    <td th:each="category : ${tableChoices}" th:text="${category}">
-<!--                        <td th:each="item : ${category.value}">-->
-                            <a th:href="@{/list/jobs(column=${category.key},value=${item})}" th:text="${item}"></a>
-                    </td>
-                <th>Values</th>
+            <td>ID</td>
+                <td th:text="${item.id}"></td>
+                </tr>
+            <tr>
+                <td>Name</td>
+                <td th:text="${item.name}"></td>
             </tr>
-
-
-<!--            <tr>-->
-<!--&lt;!&ndash;                <td th:text="${category.key}"></td>&ndash;&gt;-->
-<!--&lt;!&ndash;                <td th:text="${item}"></td>&ndash;&gt;-->
-
-
-<!--                <td th:each="category : ${tableChoices}"></td>-->
-<!--                <td th:text="${category}"></td>-->
-<!--&lt;!&ndash;                        <a th:href="@{/list/jobs(column=${category.key},value=${item})}" th:text="${item}"></a>&ndash;&gt;-->
-<!--&lt;!&ndash;            <tr th:each="column : ${columnChoices.keySet()}">&ndash;&gt;-->
-<!--&lt;!&ndash;                <td th:text="${jobs.id}"></td>&ndash;&gt;-->
-<!--                <td th:text="${jobs.name}"></td>-->
-<!--                <td th:text="${jobs.employer}"></td>-->
-<!--                <td th:text="${jobs.location}"></td>-->
-<!--                <td th:text="${jobs.positions}"></td>-->
-<!--                <td th:text="${jobs.skills}"></td>-->
-<!--            </tr>-->
-        </th:block>
+            <tr>
+                <td>Employer</td>
+                <td th:text="${item.employer}"></td>
+            </tr>
+            <tr>
+                <td>Location</td>
+                <td th:text="${item.location}"></td>
+            </tr>
+            <tr>
+                <td>Position Type</td>
+                <td th:text="${item.positionType}"></td>
+            </tr>
+            <tr>
+                <td>Skill</td>
+                <td th:text="${item.coreCompetency}"></td>
+            </tr>
     </table>
+    </th:block>
 
 </div>
 
