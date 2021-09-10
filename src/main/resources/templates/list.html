@@ -21,6 +21,15 @@
                 <!-- TODO #2: Complete the View Jobs By Category Table. -->
 
                 <td></td> <!-- Feel free to remove or modify this element if necessary. -->
+<!--tableChoices is HashMap of <Job field, ArrayList[Object with Field Name]>
+tableChoices comes from JobData
+category is one <key, value> pair from tableChoices
+category.value is the ArrayList
+item is one entry of ObjectWithFieldName from HashMap's value ArrayList, like calling tableChoices.getValue(index)
+column = a Job field because it's one key/value pair from tableChoices and .key is being called
+value = one entry of ObjectWithFieldName from HashMap's value ArrayList
+
+-->
 
                 <td th:each="category : ${tableChoices}">
                     <ul>
