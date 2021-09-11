@@ -1,3 +1,16 @@
+
+<!--NOTES:
+tableChoices is HashMap of <Job field, ArrayList[Object with Field Name]>
+tableChoices comes from JobData
+category is one <key, value> pair from tableChoices
+category.value is the ArrayList
+item is one entry of ObjectWithFieldName from HashMap's value ArrayList, like calling tableChoices.getValue(index)
+column = a Job field because it's one key/value pair from tableChoices and .key is being called
+value = one entry of ObjectWithFieldName from HashMap's value ArrayList
+
+column and value are required parameters of ListController method
+-->
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org/">
     <head th:replace="fragments :: head"></head>
@@ -19,17 +32,6 @@
             </tr>
             <tr>
 
-<!--tableChoices is HashMap of <Job field, ArrayList[Object with Field Name]>
-tableChoices comes from JobData
-category is one <key, value> pair from tableChoices
-category.value is the ArrayList
-item is one entry of ObjectWithFieldName from HashMap's value ArrayList, like calling tableChoices.getValue(index)
-column = a Job field because it's one key/value pair from tableChoices and .key is being called
-value = one entry of ObjectWithFieldName from HashMap's value ArrayList
-
-column and value are required parameters of ListController method
--->
-
                 <td>
                     <li>
                     <a th:href="@{/list/jobs(column=all)}">View All</a>
@@ -49,3 +51,4 @@ column and value are required parameters of ListController method
 
     </body>
 </html>
+
