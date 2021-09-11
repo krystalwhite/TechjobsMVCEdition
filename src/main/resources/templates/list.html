@@ -36,7 +36,9 @@ column and value are required parameters of ListController method
 -->
 
                 <td>
+                    <li>
                     <a th:href="@{/list/jobs(column=all)}">View All</a>
+                    </li>
                 </td>
 
                 <td th:each="category : ${tableChoices}">
