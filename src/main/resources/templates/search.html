@@ -24,11 +24,16 @@
                 <label th:for="${column.key}" th:text="${column.value}"></label>
             </span>
 
+<!--            the bonus mission is asking for us to keep "position type" or the equivalent checked rather than the search term text inputted by the user-->
+
         </p>
 
         <p>
             <label for="searchTerm">Keyword:</label>
-            <input type="text" name="searchTerm" id="searchTerm" />
+            <input type="text" name="searchTerm" id="searchTerm"/>
+<!--                <th:if="${searchTerm != ''}" th:text="${searchTerm}"></th:if>-->
+<!--            th:value is only for the first time but not consequent ones-->
+<!--            value = "hard code a string" works for that single string but is not scalable to all search terms-->
         </p>
 
         <input type="submit" value="Search" />
@@ -36,7 +41,7 @@
 
     <hr />
 
-    <!-- TODO #4 - Loop over the search results to display all job fields. -->
+        <table th:replace = "fragments :: table-display"></table>
 
 </div>
 

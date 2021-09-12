@@ -82,7 +82,7 @@ public class TestTaskThree {
     }
 
     /*
-    * Checks that displaySearchResults calls JobData.findAll when apppropriate
+    * Checks that displaySearchResults calls JobData.findAll when appropriate
     * */
     @Test
     public void testDisplaySearchResultsCallsFindAll(@Mocked JobData jobData) throws NoSuchMethodException, ClassNotFoundException, InvocationTargetException, IllegalAccessException {
@@ -98,7 +98,7 @@ public class TestTaskThree {
     }
 
     /*
-     * Checks that displaySearchResults calls JobData.findByColumnAndValue when apppropriate
+     * Checks that displaySearchResults calls JobData.findByColumnAndValue when appropriate
      * */
     @Test
     public void testDisplaySearchResultsCallsFindByColumnAndValue(@Mocked JobData jobData) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
